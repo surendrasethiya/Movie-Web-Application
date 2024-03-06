@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+/* body {
+  background-color: #030303;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+} */
+
+
+header {
+  background-color: #56067d;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Align items horizontally */
+  align-items: center; /* Align items vertically */
+  padding: 1rem;
+}
+
+h1 {
+  color: whitesmoke;
+}
+
+.search {
+  background-color: transparent;
+  border: 2px solid #e9e9ec;
+  border-radius: 50px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  width: 100%; /* Take up full width */
+  max-width: 300px; /* Limit width for larger screens */
+}
+
+.search {
+  background-color: transparent;
+  border: 2px solid #e9e9ec;
+  border-radius: 50px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+.search::placeholder {
+  color: #7378c5;
+}
+
+.search:focus {
+  background-color: #050505;
+  outline: none;
+}
+
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
+}
+
+.movie {
+  background-color: #373b69;
+  border-radius: 3px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  margin: 1rem;
+  width: calc(25% - 2rem); /* Adjust width for responsiveness */
+}
+
+.movie img {
+  width: 90%;
+  
+  
+} 
+
+.movie-info {
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.5rem 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.movie-info h3 {
+  margin: 1;
+}
+
+.movie-info span {
+  background-color: #22254b;
+  border-radius: 3px;
+  font-weight: bold;
+  padding: 0.25rem 0.8rem;
+}
+
+.movie-info span.green {
+  color: rgb(39, 189, 39);
+}
+
+.movie-info span.orange {
+  color: orange;
+}
+
+.movie-info span.red {
+  color: rgb(189, 42, 42);
+}
+
+.overview {
+  background-color: #fff;
+  padding: 1rem;
+  position: absolute;
+  max-height: 100%;
+  overflow: auto;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateY(101%);
+  transition: transform 0.28s ease-in;
+}
+
+.overview h3 {
+  margin-top: 0;
+}
+
+.movie:hover .overview {
+  transform: translateY(0);
+  
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .search {
+    margin-top: 1rem;
+    max-width: none; /* Remove max-width for smaller screens */
+  }
+
+  div {
+    justify-content: flex-start; /* Align items to the start */
+    margin: 0 1rem; /* Add margin to the sides */
+  }
+
+  .movie {
+    width: calc(50% - 2rem); /* Adjust width for responsiveness */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .movie {
+    width: 100%; /* Adjust width for smaller screens */
+  }
+}
+
+/* App.css */
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Favorites */
+.movie.favorited {
+  border: 2px solid #ff9800; /* Orange border for favorited movies */
+}
+
+/* Error Message */
+.error-message {
+  color: #f44336; /* Red color for error messages */
+  margin-top: 10px;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #56067d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #6a1b99;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.dark-mode-toggle button {
+  background-color: #56067d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.dark-mode-toggle button:hover {
+  background-color: #6a1b99;
+}
+
+/* App.css */
+
+/* Light Mode Styles */
+body {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.movie {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.movie-info {
+  color: #495057;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #343a40;
+  color: #adb5bd;
+}
+
+.movie.dark-mode {
+  background-color: #212529;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.movie-info.dark-mode {
+  color: #ced4da;
+}
+
+/* Movie.css */
+
+.movie {
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  margin: 1rem;
+  width: calc(25% - 2rem); /* Adjust width for responsiveness */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.movie:hover {
+  transform: translateY(-5px); /* Lift the movie card on hover */
+}
+
+.movie img {
+  width: 90%;
+  transition: transform 0.3s ease; /* Smooth transition for image scaling */
+}
+
+.movie:hover img {
+  transform: scale(1.05); /* Scale up the image on hover */
+}
+
+/* Other styles remain unchanged */
